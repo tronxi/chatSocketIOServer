@@ -5,13 +5,12 @@ var io = require('socket.io')(server);
 
 app.use(express.static(__dirname));
 
-server.listen(8890, function() {
-	console.log('Servidor funcionando');
-});
+
 app.get('//', (req, res) => 
 {
     res.send('Servidor webChat funcionando');
 });
+
 io.on('connect', function(socket) {
     console.log('Un cliente se ha conectado');
     socket.on('new-message', function(data) {
@@ -30,4 +29,8 @@ io.on('connect', function(socket) {
         console.log('salir a sala ' + data);
         //io.sockets.in(data).emit('message', 'socket');
     });
+});
+
+server.listen(8890, function() {
+	console.log('Servidor funcionando');
 });
