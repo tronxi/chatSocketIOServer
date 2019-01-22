@@ -5,10 +5,10 @@ var io = require('socket.io')(server);
 
 app.use(express.static(__dirname));
 
-server.listen(5000, function() {
-	console.log('Servidor corriendo en http://localhost:5000');
+server.listen(8890, function() {
+	console.log('Servidor funcionando');
 });
-app.get('/', (req, res) => 
+app.get('//', (req, res) => 
 {
     res.send('Servidor webChat funcionando');
 });
