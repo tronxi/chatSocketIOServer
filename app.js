@@ -8,7 +8,7 @@ app.use(express.static(__dirname));
 
 app.get('//', (req, res) => 
 {
-    res.send('Servidor webChat funcionando');
+    res.send('Servidor chatSocket funcionando');
 });
 
 io.on('connect', function(socket) {
